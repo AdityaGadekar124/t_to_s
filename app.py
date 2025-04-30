@@ -16,7 +16,7 @@ st.title("🧠 NL → SQL using LangChain + OpenRouter")
 st.markdown("Type a natural language query and get results from your PostgreSQL database.")
 
 # DB config
-db_url = os.getenv("DATABASE_URL")
+db_url = st.secrets["DATABASE_URL"]
 # Few-shot examples
 examples = [
     {
@@ -75,7 +75,7 @@ few_shot_prompt = FewShotPromptTemplate(
 # Connect to OpenRouter LLM
 llm = ChatOpenAI(
     temperature=0,
-    openai_api_key=os.getenv("OPENROUTER_API_KEY"),
+    openai_api_key = st.secrets["OPENROUTER_API_KEY"]
     openai_api_base="https://openrouter.ai/api/v1",
     model="deepseek/deepseek-chat-v3-0324:free"  # Change this if needed
 )
