@@ -75,7 +75,7 @@ few_shot_prompt = FewShotPromptTemplate(
 # Connect to OpenRouter LLM
 llm = ChatOpenAI(
     temperature=0,
-    openai_api_key = st.secrets["OPENROUTER_API_KEY"]
+    openai_api_key = st.secrets["OPENROUTER_API_KEY"],
     openai_api_base="https://openrouter.ai/api/v1",
     model="deepseek/deepseek-chat-v3-0324:free"  # Change this if needed
 )
